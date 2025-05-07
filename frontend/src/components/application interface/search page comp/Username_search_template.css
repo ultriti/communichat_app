@@ -1,0 +1,54 @@
+.username_search_temp_frame{
+    height: 100%;
+    width: 100%;
+    background-color: #151517;
+    border-radius: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5vw 1vw;
+    gap: 1vw;
+    border-right: 0.5px solid #29296c;
+    border-left: 0.5px solid #2a2a6e;
+
+}
+
+.searched_user_profilepic_div{
+    height: 100%;
+    width: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(255, 255, 255, 0.2); */
+}
+
+.searched_user_profilepic_div img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.searched_user_Username_div{
+    height: 100%;
+    width: 80%;
+    /* background-color: #fff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5vw 1vw;
+    gap: 0.3vw;
+}
+.searched_username_p{
+    font-size: 1.1vw;
+    color: #e6e6e6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.searched_name_p{
+    font-size: 1vw;
+    color: rgb(150, 150, 150);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.1vw;
+    margin-left: 0.3vw;
+}
+

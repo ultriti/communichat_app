@@ -1,0 +1,72 @@
+.app_delete_uploads_template{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+
+
+
+}
+
+.app_delete_uploads_exit_bar{
+    height: 2.5vw;
+    width: 100%;
+    background-color: rgba(79, 79, 79, 0.404);
+    border-bottom: 1px solid rgb(10, 10, 10);
+    display: flex;
+    justify-content: right;
+    padding: 0 1vw;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+
+
+}
+
+.app_delete_uploads_exit_icon button{
+    height: 2vw;
+    width: 2vw;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 1vw;
+}
+
+.app_delete_uploads_main_frame{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 2vw 0;
+}
+
+.app_home_uploads_more_options_div{
+    height: 3vw;
+    width: 100%;
+    background-color: rgb(82, 82, 82);
+    border-bottom: 0.2px solid grey;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.app_home_uploads_more_options_div p{
+    font-size: 1.2vw;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.app_home_uploads_more_options_div:hover{
+    background-color: rgb(31, 31, 31);
+    color: rgb(210, 210, 210);
+
+}

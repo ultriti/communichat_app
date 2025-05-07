@@ -1,0 +1,54 @@
+.user_navbar_frame{
+    height: 3vw;
+    width: 100%;
+    background-color: rgba(67, 67, 67, 0.249);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* application logo div */
+
+.application_logo_div{
+    height: 100%;
+    width: 20vw;
+    /* background-color: darkblue; */
+}
+
+
+/* navbar list div  */
+
+.pages_list_div{
+    height: 100%;
+    width: 40vw;
+    /* background-color: lavender; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.pages_list_div ul{
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+
+.pages_list_div ul .Navlink_list{
+    text-decoration: none;
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgb(188, 188, 188);
+    transition: color 0.3s ease;
+
+
+}
+
+
+
+

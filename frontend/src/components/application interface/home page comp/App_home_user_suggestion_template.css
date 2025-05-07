@@ -1,0 +1,88 @@
+.user_suggestion_template_frame{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.user_suggestion_template_frame .link_user_profiles {
+    color: #fff;
+    text-decoration: none
+}
+
+
+.link_user_profiles{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.user_suggestion_profile_pic_div{
+    height: 3.5vw;
+    width: 3.5vw;
+    padding: 0.2vw 0.2vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user_suggestion_profile_pic_div img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.user_suggested_username_div{
+    height: 3.5vw;
+    width: 16vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0.6vw 1.2vw;
+}
+
+.user_suggested_username_div .u_s_username_p{
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: rgb(214, 214, 214);
+}
+
+.u_s_fnf_p{
+    font-size: 0.8vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(125, 125, 125);
+    margin-top: 0.1vw;
+}
+
+.user_suggetion_track_fnf_div{
+    height: 3.5vw;
+    width:4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fnf_p{
+    font-size: 0.8vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #8585fd;
+    margin-top: 0.1vw;
+}
+
+.fnf_p .fnf_span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4vw 0.7vw;
+    border-radius: 14px;
+    background-image: linear-gradient(to right, #8585fd, #4040a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 0.5px solid #4040a5;
+    /* background-color: #101012; */
+
+}

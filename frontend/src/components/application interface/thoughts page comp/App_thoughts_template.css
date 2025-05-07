@@ -1,0 +1,73 @@
+.thoughts_template_frame_div{
+    min-height: 7.5vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 0vw 1vw 0;
+    
+}
+
+.thoughts_user_details_div{
+    height: 3.2vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 2vw;
+    gap: 1vw;
+}
+
+.thought_user_profile_pic{
+    height: 100%;
+    width: 3.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thought_user_profile_pic img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.thoughts_user_information_div{
+    height: 100%;
+    width: 25vw;
+    display: flex;
+    margin-top: 0.2vw;
+}
+.thoughts_user_information_div p{
+    font-size: 1.5vw;
+    width: 500;
+    color: rgb(199, 199, 199);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.thoughts_user_info_edit_div{
+    height: 100%;
+    width: 3.5vw;
+}
+
+/* -----------------> thoughts display div */
+.thought_display_div{
+    min-height: 2.5vw;
+    width: 100%;
+    display: flex;
+    padding: 0vw 2vw 0.4vw 3.5vw;
+}
+
+.thoughts_main_frame{
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid rgb(89, 89, 89);
+    padding: 0.4vw 1vw 1vw 1vw;
+    border-bottom-left-radius: 25px ;
+}
+
+.dec_main_line p{
+    font-size: 1.1vw;
+    color: #797979;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+
+}

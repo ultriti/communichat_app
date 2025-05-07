@@ -1,0 +1,71 @@
+.app_thoughts_page_frame {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #0c0d0e;
+    display: flex;
+    flex-direction: row;
+}
+
+.app_thoughts_side_bar_div {
+    min-height: 100%;
+    width: 6vw;
+    background: #0f1012;
+    border-right: 1px solid rgb(24, 24, 24);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+}
+
+
+
+
+
+/* -----------------------> toughts app main frame */
+
+.app_thoughts_main_frame_div {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: darkgreen; */
+    display: flex;
+    flex-direction: row;
+    margin-left: 6vw;
+
+
+}
+
+
+/* thoughts left div */
+.thoughts_left_div_all_thoughts{
+    min-height: 100vh;
+    width: 55%;
+    /* background-color: teal; */
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------> right sorted div */
+
+.thoughts_right_div_sorted_thoughts{
+    min-height: 100%;
+    width: 40%;
+    /* background-color: salmon; */
+    display: flex;
+    flex-direction: column;
+    padding: 5vw 2vw;
+}

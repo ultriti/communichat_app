@@ -1,0 +1,40 @@
+.app_uploads_template_frame{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.uplaods_hover_overlay_div{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.682);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transform: translateX(420px);
+}
+
+.uplaods_display_div{
+    height: 100%;
+    width: 100%;
+
+}
+
+.uplaods_display_div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.uploads_hover_display_fetaures_div{
+    height: 7vw;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

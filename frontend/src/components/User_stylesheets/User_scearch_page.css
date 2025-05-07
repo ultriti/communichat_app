@@ -1,0 +1,30 @@
+.User_scearch_page_frame{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #0c0d0e;
+    display: flex;
+    flex-direction: column;
+}
+
+.user_sidebar_1_ {
+    height: 100%;
+    width: 6vw;
+    background: #0f1012;
+    border-right: 1px solid rgb(24, 24, 24);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 20;
+    position: fixed;
+    top:0;
+    left: 0;
+}
+
+.main_cont_frame_{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    /* background-color: rgb(31, 148, 158); */
+}

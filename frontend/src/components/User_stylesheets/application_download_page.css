@@ -1,0 +1,82 @@
+.application_download_page_frame{
+    height: 100vh;
+    width: 100%;
+    background-color: #0e0e0e;
+    display: flex;
+    flex-direction: column;
+}
+
+.Use_navbar_div{
+    height: 3vw;
+    width: 100%;
+    background-color: grey;
+}
+
+
+/* main frame */
+
+.application_download_page_mainframe{
+    height: 96vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+
+/* leftframe */
+.app_dpm_left_frame{
+    height: 100%;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: seagreen; */
+}
+
+
+.app_dpm_left_frame_cont{
+    height: 2vw;
+    width: 100%;
+    background-color: darkcyan;
+}
+
+
+/* right frame */
+.app_dpm_right_frame{
+    height: 100%;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    /* overflow: hidden; */
+    perspective: 1000px; /* Add perspective to the parent element */
+
+}
+
+.img_container_div{
+    height: 30vw;
+    width: 80vw;
+    background-color: darkblue;
+    transform: translateX(8vw) translateY(2vw) translateZ(5vw) rotateX(2deg) rotateY(-5deg) rotateZ(12deg);
+    box-shadow: 0 0 19px rgb(58, 72, 72);
+    border-radius: 20px;
+    flex-direction: column;
+    cursor:grab;
+    
+}
+
+.img_container_div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.img_container_div .overlay_1{
+    height: 6vw;
+    width: 25vw;
+    scale: 0.6;
+    border-radius: 8px;
+    transform: translateX(-1.5vw) translateY(-44.3vw) ;
+}

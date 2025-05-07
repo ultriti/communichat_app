@@ -1,0 +1,48 @@
+/* Primary Background: #1E1E1E,#212529 (Dark Gray)
+
+#1a1d21
+
+Secondary Background: #1A1D21 
+
+Accent Color: #FF4081 (Pink)
+
+Text Color: #FFFFFF (White)
+button : #6153CC;
+2nd button:#06D6A0;
+#303767, #272a57 
+#2a3060, #1e234d
+ background: linear-gradient(to bottom, #121428, #10142b);
+Secondary Text Color: #B0B0B0 (Light Gray) */
+ /* background-color: #212529; */
+
+.communichat_home_frame {
+  height: 100vh;
+  width: 100%;
+  background-color: #131313;
+  /* background-color: #0c0d0e; */
+
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  height: 2vw;
+  width: 11vw;
+  background-color: #5A4FBC;
+}
+
+button:hover {
+  background-color: #E7326C;
+}
+
+.user_navbar_frame {
+  width: 100%;
+  height: 3vw;
+  display: flex;
+  flex-direction: row;
+  background-color: #0c0d0e;
+
+}
+
+
+

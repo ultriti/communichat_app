@@ -1,0 +1,135 @@
+.messages_frame{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.message_user_details_top_frame{
+    min-height: 13vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+._msg_user_profile_pic{
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+._msg_user_profile_pic img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.message_user_details_top_frame ._msg_username_{
+    height: 3vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    font-size: 1.5vw;
+    color: white;
+}
+
+.msg_view_profile{
+    height: 3vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.msg_view_profile button{
+    height: 2.5vw;
+    width: 10vw;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.3vw;
+    color: rgb(25, 25, 25);
+    cursor: pointer;
+    background: linear-gradient(to bottom, #8585fd, #4f4fd3); 
+
+}
+
+/* display messages */
+.message_content_frame_display{
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+   
+}
+.message_content_frame_display_cont{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.2vw;
+}
+
+.display_message{
+    min-height: 3vw;
+    width: 100%;
+    display: flex;
+    align-items:center ;
+    margin-top: 0; 
+    color: white;
+    margin: 0.1vw;
+
+}
+
+
+.display_message_user{
+    justify-content: left;
+    
+}
+.display_message_admin{
+    justify-content: right;
+}
+
+/* display_message_type */
+.display_message_type{
+    height: 100%;
+    min-width: 5vw;
+    max-width: 30vw;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.4vw 1vw;
+    flex-wrap: wrap;
+    word-break:normal;
+}
+.display_message_type p{
+    margin: 0.2vw 0.3vw;
+    font-size: 1.4vw;
+    font-weight: 500;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.display_message_type_a{
+    background-color: rgb(51, 49, 51);
+    display: flex;
+    align-items:flex-start;
+
+}
+
+.display_message_type_u{
+    background-color: #4040a5;
+    display: flex;
+    text-align: left;
+ 
+}

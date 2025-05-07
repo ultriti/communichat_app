@@ -1,0 +1,39 @@
+.application_main_frame_profile{
+    height: 100vh;
+    width: 100%;
+    background-color: #0c0d0e;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.main_cont_frame_profile{
+    height: 100%;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.overlay_profile_page_{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(22, 22, 22, 0.685);
+    position: fixed;
+    opacity: 1;
+    top:0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.overlay_profile_edit_template_div{
+    height: 85vh;
+    width: 70vw;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+
+}

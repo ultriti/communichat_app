@@ -1,0 +1,13 @@
+body::-webkit-scrollbar{
+    width: 0; 
+}
+html::-webkit-scrollbar{
+    width: 0; 
+}
+
+*::-webkit-scrollbar{
+    width: 0;
+}
+
+/*     border: 0.5px solid #4040a5; - focus*/
+/*     border: 0.5px solid #17173d; */

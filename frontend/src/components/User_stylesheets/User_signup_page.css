@@ -1,0 +1,363 @@
+.user_signup_page_frame {
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(circle 482px at 50% 50.2%, rgb(4, 1, 83) 0.1%, rgb(2, 12, 86) 1%, rgba(3, 1, 50, 1) 95.2%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   
+  
+}
+
+
+.user_signup_mainframe {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user_signup_mainframe{
+    height: 200vh;
+    width: 40vw;
+    padding: 5vw 5vw;
+    gap: 1vw;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+   
+}
+
+.main_form_frame{
+    height: 35vw;
+    width: 32vw;
+    overflow-y: hidden;
+    margin-top: 3vw;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+ 
+}
+
+form{
+    height: 100%;
+    width: 100%;
+}
+/* user signup */
+.singup_frame_{
+    height: 35vw;
+    width: 32vw;
+    background-image: radial-gradient(circle 482px at 50% 50.2%, rgb(4, 1, 83) 0.1%, rgb(2, 12, 86) 1%, rgba(3, 1, 50, 1) 95.2%);
+    backdrop-filter: blur(10px);
+    border: 1px solid black;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.signup_form{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/* signup_title_div */
+.signup_title_div{
+    height: 8vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+    color: rgb(217, 217, 217);
+}
+
+.signup_title{
+    font-size: 2.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+   
+}
+
+/* signup labels */
+.signup_input_div{
+    height: 3vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+
+.signup_input_div input{
+    height: 2vw;
+    width: 15vw;
+    border-radius: 8px;
+    border: 0;
+}
+
+.signup_btn_div{
+    height: 5vw;
+    width:100%;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.singup_btn{
+    height: 3vw;
+    width: 12vw;
+    background-color: red;
+    border-radius: 20px;
+    font-size: 1.3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* user login */
+.login_frame_{
+    border-top-right-radius: 7vw;
+    border-top-left-radius: 7vw;
+    height: 35vw;
+    width: 32vw;
+    border: 1px solid black;
+    transform: translateY(-8vw);
+    overflow: hidden;
+    background-color: #e1e1e1;
+
+    
+}
+
+.login_title_div{
+    height: 8vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+    color: rgb(22, 22, 22);
+
+}
+
+
+.login_title{
+    font-size: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 2vw;
+    color: black;
+
+}
+
+.login_input_div input{
+    background-color: rgb(206, 206, 206);
+}
+
+
+
+
+
+/* user sign up div */
+
+/* .user_signup_div {
+    height: 40vw;
+    width: 35vw;
+    background-color: salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 22px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    /* overflow: hidden; */
+/* }  */
+
+/*-------------------------- signup title div -----------------*/
+/* .signup_page_label_div_title {
+    height: 12vw;
+    width: 100%;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+
+}
+
+.signup_title {
+    font-size: 2.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
+
+
+.signup_form_div {
+    height: 100%;
+    width: 100%;
+} */
+
+/* .signup_page_label_div {
+    height: 3vw;
+    width: 100%;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+} */
+
+/* .signup_page_label_div input {
+    height: 2vw;
+    width: 15vw;
+    background-color: rgb(211, 211, 211);
+    border-radius: 8px;
+    border: 0;
+} */
+
+
+/* sign up btn div */
+/* .signup_btn_div {
+    height: 8vw;
+    width: 100%;
+    /* background-color: darkred; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}  */
+
+/* .signup_buttons {
+    height: 3vw;
+    width: 12vw;
+    background-color: red;
+    border-radius: 20px;
+    font-size: 1.3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 1px solid white;
+    cursor: pointer;
+} */
+
+
+/*------------------- login page ---------------*/
+/* .user_login_goto_div{
+    border-top-right-radius: 10vw;
+    border-top-left-radius: 10vw;
+    height: 40vw;
+    width: 35vw;
+    background-color: rgb(74, 74, 208);
+    gap :3vw;
+    overflow: hidden;
+    transform: translateY(-10vw);
+} */
+/* 
+main frame
+.user_login_div{
+    height: 40vw;
+    width: 35vw;
+    background-color: rgb(105, 105, 105);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.login_page_label_div_title{
+    height: 10vw;
+    width: 100%;
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.login_title{
+    font-size:2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
+
+.login_form_div{
+    height: 100%;
+    width: 100%;
+}
+
+.login_page_label_div{
+    height: 3vw;
+    width: 100%;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.login_page_label_div label{
+    color: white;
+    font-size: 1.3vw;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.login_page_label_div input{
+    height: 2vw;
+    width: 15vw;
+    background-color: rgb(211, 211, 211);
+    border-radius: 8px;
+    border: 0;
+}
+
+
+login btn div
+.login_btn_div{
+    height: 5vw;
+    width: 100%;
+    background-color: darkred;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap :3vw;
+}
+
+.login_buttons{
+    height: 3vw;
+    width: 12vw;
+    background-color: red;
+    border-radius: 20px;
+    font-size: 1.3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 1px solid white;
+    cursor: pointer;
+} */
+
+/* user login page */
+/* .user_login_goto_div{
+    height: 50vw;
+    width: 35vw;
+    background-color: grey;
+} 
+*/
