@@ -140,6 +140,7 @@ const User_signup_page = () => {
             Email: user_email_login,
             Password: user_password_login
         }
+        console.log(import.meta.env.VITE_BASE_URL);
 
         const axios_login_send = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/login`, user_login_data_send, {withCredentials:true});
         

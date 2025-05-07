@@ -8,11 +8,15 @@ const message = require('./routes/Message.routes.js')
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' }); // Set the destination directory for uploaded files
 const {server,app,io} = require('./socket/socket.js')
+// const path = require('path');
 
 
 dotenv.config(); // Load environment variables from.env file
 
 const PORT = process.env.PORT || 3000;
+// const _dirname = path.resolve();
+// console.log('dirname:',_dirname);
+
 
 // const app = express(); use app from socket
 
@@ -43,6 +47,12 @@ app.get('/', (req, res) => {
 app.use('/users',userRoutes);
 app.use('/users/thoughts',userRoutes);
 app.use('/users/message',message);
+
+// app.use(express.static(path.join(_dirname,"/frontend/build")));
+// app.get('*', (req, res)=>{
+//     res.sendFile(path.join(_dirname,"frontend","build", "index.html"  ));
+// });
+
 
 server.listen(PORT, (req, res) => {
     console.log(`Server is running on port ${PORT}`);
