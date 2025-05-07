@@ -14,8 +14,6 @@ const {server,app,io} = require('./socket/socket.js')
 dotenv.config(); // Load environment variables from.env file
 
 const PORT = process.env.PORT || 3000;
-// const _dirname = path.resolve();
-// console.log('dirname:',_dirname);
 
 
 // const app = express(); use app from socket
@@ -27,7 +25,6 @@ console.log('-->',process.env.cors_frontend);
 connect_DB();
 app.use(cors({
     credentials: true,
-    // origin: `${process.env.cors_frontend}` // Replace with your frontend URL
     origin: process.env.cors_frontend // Replace with your frontend URL
 }));
 
@@ -43,15 +40,11 @@ app.get('/', (req, res) => {
 });
 
 
+console.log(require("cookie-parser"));
 
 app.use('/users',userRoutes);
 app.use('/users/thoughts',userRoutes);
 app.use('/users/message',message);
-
-// app.use(express.static(path.join(_dirname,"/frontend/build")));
-// app.get('*', (req, res)=>{
-//     res.sendFile(path.join(_dirname,"frontend","build", "index.html"  ));
-// });
 
 
 server.listen(PORT, (req, res) => {
