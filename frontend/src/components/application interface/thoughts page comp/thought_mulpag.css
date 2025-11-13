@@ -7,6 +7,9 @@
     height: 14vh;
     width: 100%;
     border-bottom: 0.5px solid #11112f;
+    display: flex;
+    flex-direction: column;
+    
     /* background-color: saddlebrown; */
 }
 

@@ -1,158 +1,193 @@
-.Edit_profile_template_frame{
-    height: 100%;
-    width: 100%;
-    display: flex;
+.Edit_profile_template_frame {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.edit_profile_details_mainframe{
-    height: 100%;
-    width: 100%;
-    background-color: rgb(28, 28, 28);
-    display: flex;
-    flex-direction: column;
+.edit_profile_details_mainframe {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #1c1c1c;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.6);
 }
 
-.edit_profile_temp_exit_bar{
-    height:2.5vw;
-    width: 100%;
-    background-color: rgb(26, 26, 26);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
-    padding: 0vw 1vw;
+.edit_profile_temp_exit_bar {
+  height: 2.5vw;
+  width: 100%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1vw;
+  border-bottom: 1px solid #333;
 }
 
-.edit_profile_temp_exit_bar button{
-    height: 2vw;
-    width: 2vw;
-    background-color: green;
-    border-radius: 50%;
-    cursor: pointer;
+.edit_profile_temp_exit_bar button {
+  height: 2vw;
+  width: 2vw;
+  background-color: #ff4c4c;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-
-.edit_admin_profile_data_frames{
-    height: 100%;
-    width: 100%;
-    background-color: lavender;
-    display: flex;
-    flex-direction: row;
+.edit_profile_temp_exit_bar button:hover {
+  background-color: #ff1a1a;
 }
 
-/* admin edit profile pic */
-.edit_admin_profile_pic{
-    height: 100%;
-    width: 40%;
-   
+.edit_admin_profile_data_frames {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #181818;
 }
 
-.change_admin_profile_pic{
-    height: 55%;
-    width: 100%;
-    background-color: pink;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3vw 2vw 0 2vw;
+/* Left: Profile Picture Section */
+.edit_admin_profile_pic {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw;
+  background: #202020;
+  border-right: 1px solid #2a2a2a;
 }
 
-.profile_pic_display{
-    height: 15vw;
-    width: 15vw;
-    background-color: aliceblue;
-    border-radius: 10px;
+.change_admin_profile_pic {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
 }
 
-.profile_pic_display img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.profile_pic_display {
+  min-height: 5vw;
+  min-width: 5vw;
+  background: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.5);
 }
 
-
-.profile_pic_import_btn_div{
-    height:5vw;
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.profile_pic_display img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
-
-.display_selected_profile_image_div{
-    height: 45%;
-    width: 100%;
-    background-color: cadetblue;
+.profile_pic_import_btn_div {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+  justify-content: center;
 }
 
-.display_seleted_img_ppic{
-    height: 12vw;
-    width: 12vw;
+.profile_pic_import_btn_div input[type="file"] {
+  color: #ccc;
 }
 
-.display_seleted_img_ppic img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.profile_pic_import_btn_div button {
+  padding: 0.5vw 1.5vw;
+  background: #4f4fd3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-
-
-/* edit_admin_data_form */
-.edit_admin_data_form{
-    height: 100%;
-    width: 60%;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
+.profile_pic_import_btn_div button:hover {
+  background: #8585fd;
 }
 
-.edit_admin_data_form .edit_profile_pic_form{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1vw;
-    padding: 2vw 2vw;
+.display_selected_profile_image_div {
+  /* margin-top: 2vw; */
+  min-height: 12vw;
+  min-width: 12vw;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.edit_prop_pic_label{
-    height: 2.7vw;
-    width: 22vw;
-    background-color: blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    padding: 0 1vw;
-    gap: 1vw;
-    font-size: 1.2vw;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color: white;
+.display_seleted_img_ppic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-.edit_save_changes_btn_div{
-    height: 6vw;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Right: Form Section */
+.edit_admin_data_form {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
 }
 
-.edit_profile_pic_form button{
-    height: 2.5vw;
-    width: 12vw;
-    cursor: pointer;
-    border-radius: 15px;
-    background: linear-gradient(to bottom, #8585fd, #4f4fd3); 
+.edit_profile_pic_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vw;
+  padding: 3vw;
 }
 
-.edit_profile_pic_form button:hover{
-    background: linear-gradient(to bottom,  #4f4fd3, #8585fd); 
+.edit_prop_pic_label {
+  height: 3vw;
+  width: 80%;
+  background: #2a2a2a;
+  border: none;
+  border-radius: 10px;
+  padding: 0 1vw;
+  font-size: 1.1vw;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
 
+.edit_prop_pic_label:focus {
+  outline: none;
+  background: #333;
+}
+
+.edit_save_changes_btn_div {
+  margin-top: 2vw;
+}
+
+.edit_save_chnages_btn {
+  height: 2.7vw;
+  width: 14vw;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to right, #4f4fd3, #8585fd);
+  color: white;
+  font-weight: bold;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit_save_chnages_btn:hover {
+  background: linear-gradient(to right, #8585fd, #4f4fd3);
 }

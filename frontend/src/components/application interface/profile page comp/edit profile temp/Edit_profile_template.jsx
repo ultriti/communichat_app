@@ -13,9 +13,6 @@ const Edit_profile_template = () => {
   const dispatch = useDispatch();
   const { admin_details } = useSelector((state) => state.auth);
 
-
-
-
   const nav = useNavigate();
 
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import './App_post_uploads_temp.css'
 import '../../User_stylesheets/User_page_common.css'
-import User_navbar from '../../User_pages/User_navbar'
-import User_sidebar from '../../User_pages/User_sidebar.jsx'
+import User_sidebar from '../../common_Routes/User_sidebar.jsx'
 import default_profile_pic from '../../../../public/images/default_profile_pic.svg'
 
 import axios from 'axios'
@@ -74,43 +73,57 @@ const App_post_uploads_temp = () => {
   };
 
   // uploads image to server  funtion
-  const post_uploads_pic_funtion = async (e) => {
+const post_uploads_pic_funtion = async (e) => {
+  e.preventDefault();
 
-    e.preventDefault();
-    const reader = new FormData();
-    reader.append('file', post_uploads_input);
-    reader.append('upload_preset', 'communichat_folder');
-    reader.append('cloud_name', 'dqifawygq');
-    reader.append('width', 480);
-    reader.append('height', 320);
-    reader.append('crop', 'limit');
-    reader.append('quality', 'auto:best');
+  if (!post_uploads_input) return;
 
-    if (post_uploads_input) {
-      const res = await fetch(`https://api.cloudinary.com/v1_1/dqifawygq/image/upload`, { method: 'POST', body: reader });
+  const reader = new FormData();
+  reader.append('file', post_uploads_input);
+  reader.append('upload_preset', 'communichat_folder');
+  reader.append('folder', 'communichat_folder'); // optional: keeps uploads organized
 
+  // Apply transformation during upload: resize, compress, convert to WebP
+  reader.append('eager', 'c_limit,w_480,h_320,q_auto:best,f_webp');
 
-      const uploads_url_admin = await res.json();
-      const highQualityImageUrl = cloudinary.url(uploads_url_admin.public_id, {
-        width: 1920,
-        height: 1080,
-        crop: 'limit',
-        quality: 'auto:best',
-      });
+  try {
+    const res = await fetch(`https://api.cloudinary.com/v1_1/dqifawygq/image/upload`, {
+      method: 'POST',
+      body: reader,
+    });
 
-      const send_edited_data = {
-        uploads_pic: highQualityImageUrl,
-        profile_picture_id: uploads_url_admin.public_id,
-        thoughts: uploads_thoughts_input,
-        comments: uploads_comments_input,
-      };
+    const uploads_url_admin = await res.json();
 
-      const axios_uplaods_details_cloudinary = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/create_user`, send_edited_data, { withCredentials: true });
-      dispatch(setUpload([...uploads, axios_uplaods_details_cloudinary.data.img_data]))
-      nav('/users/home');
+    // Generate high-quality WebP URL for display
+    const highQualityImageUrl = cloudinary.url(uploads_url_admin.public_id, {
+      width: 1920,
+      height: 1080,
+      crop: 'limit',
+      quality: 'auto:best',
+      fetch_format: 'webp',
+    });
+
+    const send_edited_data = {
+      uploads_pic: highQualityImageUrl,
+      profile_picture_id: uploads_url_admin.public_id,
+      thoughts: uploads_thoughts_input,
+      comments: uploads_comments_input,
     };
 
+    const axios_uplaods_details_cloudinary = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/users/create_user`,
+      send_edited_data,
+      { withCredentials: true }
+    );
+
+    dispatch(setUpload([...uploads, axios_uplaods_details_cloudinary.data.img_data]));
+    nav('/users/home');
+  } catch (err) {
+    console.error('Upload failed:', err);
+    alert('Upload failed. Please try again.');
   }
+};
+
 
 
 

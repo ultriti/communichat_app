@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     onlineUsers: [],
-    messages:[]
+    messages:[],
+    message:[]
 };
 
 const onlineUsersSlice = createSlice({
@@ -14,9 +15,12 @@ const onlineUsersSlice = createSlice({
         },
         setMessages:(state,action)=>{
             state.messages = action.payload;
+        },
+        setMessage:(state,action)=>{
+            state.messages = action.payload;
         }
     }
 })
 
-export const { setonlineUsers,setMessages } = onlineUsersSlice.actions;
+export const { setonlineUsers,setMessages,setMessage } = onlineUsersSlice.actions;
 export default onlineUsersSlice.reducer;

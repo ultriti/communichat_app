@@ -11,6 +11,7 @@ import { setUpload } from '../../redux-store/counter/uploadsSlice'
 import { userDataContext } from '../../../Contexts/UserContext'
 import App_uploads_info_template from '../application home templates/App_uploads_info_template'
 import App_delete_uploads from '../create content comp/App_delete_uploads'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -18,6 +19,7 @@ const App_user_uploads_template = (props) => {
     const { uplaods_more_info_toogle_, toggle_uplaods_more_info_frame, toggle_uplaods_overlay_info_fun, isUploads_display_info } = useContext(userDataContext);
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const { admin_details } = useSelector((state) => state.auth);
     const { uploads } = useSelector((state) => state.uploads);
@@ -29,6 +31,8 @@ const App_user_uploads_template = (props) => {
     // useEffect(() => {
     //     setadmin_uploads_profile_pic(props.uploads.author.profilePic);
     // }, [])
+
+    // console.log(props.uploads)
 
     const push_likes_uploads_fun = async (e) => {
         const send_likes_data = {
@@ -68,21 +72,23 @@ const App_user_uploads_template = (props) => {
                     </div>
                 </div>) : (<></>)}
 
-
-
-
             <div className="user_home_diplay_uploads_template">
 
-                <div className="user_home_uploads_left_div">
+                <div className="user_home_uploads_left_div" onClick={()=>{
+                    navigate(`/users/profile/${props.uploads.author._id}`)
+                }}>
                     <div className="display_admin_uploads_profile_pic">
-                        <img src={props.uploads.author.profilePic} alt="" />
+                        <img src={
+                            props.uploads.author.profilePic} alt="" />
                     </div>
                     <div className="user_home_uplaods_username_div">
-                        <a href={`/users/profile/${props.uploads.author._id}`} className='app_home_a_profile_link'>
+                    
                             <p className="display_uploads_admin_username">
-                                <span>{props.uploads.author.Username}</span>
+                                <span>
+                                    {props.uploads.author.Username}
+                                </span>
                             </p>
-                        </a>
+                      
 
                     </div>
 
@@ -111,7 +117,7 @@ const App_user_uploads_template = (props) => {
 
 
             {/*----------> user uplaods url div diaplay */}
-            <div className="user_home_display_url_img_div">
+            <div className="user_home_display_url_img_div" onClick={() => { toggle_uplaods_overlay_info_fun(props.uploads._id, props.uploads.uploads, props.uploads.author.profilePic, props.uploads.author.Username) }}>
                 <img src={props.uploads.uploads} alt="" />
             </div>
 

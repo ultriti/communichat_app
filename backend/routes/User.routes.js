@@ -7,11 +7,14 @@ const { isAunthenticate } = require('../middleware/User.auth');
 const upload  = require('../middleware/Multer.auth');
 const { demoauth } = require('../middleware/demo.auth');
 
-
-// --------------- user routes ---------------
+// ----------------- auth routes -------------------------
 router.post('/register',userController.registerUser);
 router.post('/login',userController.loginUser);
 router.get('/logout',userController.logoutUser);
+
+
+// --------------- user routes ---------------
+
 router.get('/:id/profile',isAunthenticate,userController.getProfile);
 router.get('/adminprofile',isAunthenticate,userController.getadmin_data);
 router.post('/edit_user_profile',isAunthenticate,userController.editUserProfile);

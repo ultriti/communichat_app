@@ -1,0 +1,180 @@
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0f0f1c;
+}
+
+.RegisterCont {
+  height: 60vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_frame{
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form {
+  background: #121222;
+  padding: 2rem;
+  border-radius: 12px;
+  /* box-shadow: 0 0 20px rgba(73, 0, 73, 0.4);
+  border: 2px solid rgb(62, 0, 62); */
+  box-shadow: 0 0 8px rgb(8, 8, 8);
+  border: 2px solid #141437;
+  width: 30vw;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.register-form h2 {
+  color: #8787ff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #1e1e2f;
+  color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.register-form input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #4f4fd3;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(to bottom, #5e2193, #4f4fd3);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+.register-form button:hover {
+  background-color: #4f4fd3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.RouteFrame {
+  height: 4vh;
+  width: 100%;
+  margin-top: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5vw;
+  color: white;
+  /* background-color: #fff; */
+  cursor: pointer;
+}
+
+.routePath {
+  font-size: 1.2vw;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: capitalize;
+  color: #8a8aff;
+}
+
+/* mobile responsive */
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .RegisterCont {
+    width: 90vw;
+    height: auto;
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .register-form {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(73, 0, 73, 0.3);
+  }
+
+  .register-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .register-form input {
+    font-size: 1rem;
+    padding: 0.65rem;
+  }
+
+  .register-form button {
+    font-size: 1rem;
+    padding: 0.65rem;
+  }
+
+  .RouteFrame {
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .routePath {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-wrapper {
+    padding: 1rem;
+  }
+
+  .register-form {
+    padding: 1rem;
+  }
+
+  .register-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .register-form input,
+  .register-form button {
+    font-size: 0.95rem;
+  }
+
+  .RouteFrame {
+    font-size: 0.85rem;
+  }
+
+  .routePath {
+    font-size: 0.95rem;
+  }
+}

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 // import '../User_stylesheets/User_home_page.css'
 import '../User_stylesheets/User_home_page_2.css'
 import '../User_stylesheets/User_page_common.css'
-import User_sidebar from './User_sidebar'
+import User_sidebar from '../common_Routes/User_sidebar'
 import App_home_pagelayout from '../application interface/home page comp/App_home_pagelayout'
 
 const User_home_page = () => {

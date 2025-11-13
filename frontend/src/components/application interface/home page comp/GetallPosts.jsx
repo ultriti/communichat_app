@@ -45,9 +45,16 @@ const GetallPosts = () => {
             const get_all_users_uploads = async () => {
                 const axios_get_all_uplaods_ = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/get_all_uploads?page=${page}&limit=${1}`, { withCredentials: true });
                 // console.log(axios_get_all_uplaods_.status);
+
+                if(axios_get_all_uplaods_.status == 404){
+                   navigate("/users/Login")
+                }
+
                 
                 if(axios_get_all_uplaods_.status == 200){
                     // console.log('axios data:',axios_get_all_uplaods_.data.posts);
+                    console.log('---> posts',axios_get_all_uplaods_.data.posts);
+                    
                     setdata(prev => [...prev, ...axios_get_all_uplaods_.data.posts])
                     dispatch(setUpload(data));
                 }

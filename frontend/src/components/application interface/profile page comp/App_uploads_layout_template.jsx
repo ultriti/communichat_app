@@ -5,6 +5,9 @@ import gsap from 'gsap'
 
 const App_uploads_layout_template = (props) => {
 
+    console.log(props);
+    
+
 
     const uplaods_curser_enter_funtion = () =>{
         
@@ -26,8 +29,6 @@ const App_uploads_layout_template = (props) => {
 
     return (
         <div className='app_uploads_template_frame'>
-
-
 
             <div className={`uplaods_display_div uplaods_display_div_${props.key_}`} onMouseEnter={()=>{uplaods_curser_enter_funtion()}} onMouseLeave={()=>{uplaods_curser_leave_funtion()}}>
                 <img src={props.profile_uploads_url} alt="" />

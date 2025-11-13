@@ -6,6 +6,8 @@ const cookieparser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const cloudinary = require('cloudinary').v2;
 const { getDataUri } = require('../mongodb/dataUri');
+const EmailVerification = require("../models/UserRegistration")
+const {sendRegistraionCodeEmail} = require("../middleware/Nodemailer")
 
 
 
@@ -19,6 +21,7 @@ cloudinary.config({
 module.exports.registerUser = async (req, res, next) => {
 
     const { Username, Email, Password } = req.body;
+    const emailcode = req.body.code;
 
     if (!Username || !Email || !Password) {
         return res.status(400).json({ errors: [{ msg: 'All fields are required' }] });
@@ -28,6 +31,14 @@ module.exports.registerUser = async (req, res, next) => {
 
     if (!user_data) {
         try {
+
+            // Check verification code
+            const verification = await EmailVerification.findOne({ Email });
+            if (!verification || verification.code !== emailcode || verification.expiresAt < new Date()) {
+                return res.status(400).json({ message: "Invalid or expired registration code", success: false });
+            }
+
+
             const hashedPassword = await userModel.hashPassword(Password);
             const admin_data = await userService.createUser({
                 Username: Username,
@@ -51,8 +62,14 @@ module.exports.registerUser = async (req, res, next) => {
             const token = jwt.sign({ Email: Email, userId: user.userId }, process.env.JWT_SECRET);
             res.cookie('token', token, {
                 httpOnly: true,
+                sameSite: 'none',
+                secure: true,
                 expires: new Date(Date.now() + 3600000 * 24 * 30) // 30 days
             });
+
+            // Clean up verification entry
+            await EmailVerification.deleteOne({ Email });
+
             res.status(200).json({ msg: 'user created successfully', user, token: token });
         }
         catch (error) {
@@ -62,6 +79,42 @@ module.exports.registerUser = async (req, res, next) => {
         return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
     }
 }
+
+// email registration code 
+
+// send registreation email verificaion 
+module.exports.sendRegisterEmailVerify = async (req, res) => {
+    try {
+        const { email, firstName } = req.body;
+        console.log('req.body:', req.body);
+
+        const existingUser = await userModel.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: "Email already exists", success: false });
+        }
+
+        const code = generateSixDigitCode();
+        const expiresAt = new Date(Date.now() + 10 * 60000);
+        console.log('Generated code:', code);
+
+        const response = await sendRegistraionCodeEmail(email, code, firstName);
+
+        if (response.Success === true) {
+            await EmailVerification.findOneAndUpdate(
+                { email },
+                { code, expiresAt, firstName },
+                { upsert: true, new: true }
+            );
+
+            return res.status(200).json({ message: "Email code sent successfully", success: true });
+        } else {
+            return res.status(500).json({ message: "Failed to send email code", success: false });
+        }
+    } catch (error) {
+        console.error('Verification error:', error);
+        return res.status(500).json({ message: "Internal server error", success: false });
+    }
+};
 
 
 module.exports.loginUser = async (req, res, next) => {
@@ -77,13 +130,9 @@ module.exports.loginUser = async (req, res, next) => {
         };
         const user_data = await userModel.findOne({ Email: Email }).select("+Password");
         if (!user_data) {
-            console.log('user not found ');
-
             return res.status(400).json({ message: 'invalid email or password' });
         }
         else {
-            console.log('password');
-
             const isMatch_password = await user_data.comparePassword(Password, user_data.Password);
 
             if (!isMatch_password) {
@@ -106,6 +155,8 @@ module.exports.loginUser = async (req, res, next) => {
                 const token = jwt.sign({ Email: Email, userId: user.userId }, process.env.JWT_SECRET);
                 res.cookie('token', token, {
                     httpOnly: true,
+                    sameSite: 'none',
+                    secure: true,
                     expires: new Date(Date.now() + 3600000 * 24 * 30) // 30 days
                 });
                 res.status(200).json({ msg: 'user found ', token: token, user });
@@ -214,8 +265,6 @@ module.exports.editUserProfile = async (req, res) => {
 module.exports.getSuggestedUsers = async (req, res) => {
     try {
         const admin_id = await userModel.findById(req.id).select("-password");
-        console.log('--> wihtout admin id', req.id);
-
 
         const page = 1, limit = 5
         const skip = (page - 1) * limit;
@@ -226,8 +275,6 @@ module.exports.getSuggestedUsers = async (req, res) => {
             { $project: { Password: 0 } } // Exclude password field
         ]);
 
-        console.log('---->', suggestedUsers);
-        
 
         const filteredUser = suggestedUsers.filter(user => user._id.toString() !== admin_id._id.toString());
         if (filteredUser.length === 0) {
@@ -237,8 +284,8 @@ module.exports.getSuggestedUsers = async (req, res) => {
             res.status(404).json({ error: "current user not found" })
         };
         const tokendata = {
-            token : req.cookies.token,
-            _id : req.id
+            token: req.cookies.token,
+            _id: req.id
         }
         return res.status(200).json({ msg: "suggested users", filteredUser, admin_id, succes: true, tokendata: tokendata });
     }

@@ -1,8 +1,7 @@
 import React from 'react'
 import '../User_stylesheets/User_scearch_page.css'
 import '../User_stylesheets/User_page_common.css'
-import User_navbar from './User_navbar'
-import User_sidebar from './User_sidebar'
+import User_sidebar from '../common_Routes/User_sidebar'
 import Search_page_layout from '../application interface/search page comp/Search_page_layout'
 
 const User_scearch_page = () => {
@@ -19,12 +18,9 @@ const User_scearch_page = () => {
 
             <div className="main_cont_frame_">
                 <Search_page_layout/>
-
             </div>
 
         </div>
-
-      
     </div>
   )
 }

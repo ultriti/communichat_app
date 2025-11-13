@@ -1,11 +1,11 @@
-.app_user_home_uploads_template{
+.app_user_home_uploads_template {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.user_home_diplay_uploads_template{
+.user_home_diplay_uploads_template {
     height: 4.5vw;
     width: 100%;
     display: flex;
@@ -13,7 +13,8 @@
     justify-content: space-between;
     flex-direction: row;
 }
-.user_home_uploads_overlay{
+
+.user_home_uploads_overlay {
     height: 100%;
     width: 100%;
     display: flex;
@@ -26,38 +27,43 @@
     background-color: rgba(58, 58, 58, 0.312);
 }
 
-.user_uploads_more_info_div{
+.user_uploads_more_info_div {
     height: 40vh;
     width: 40vw;
     background-color: rgba(47, 47, 47, 0.966);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 7px rgb(15, 15, 15);
+   
 }
-.user_home_uploads_left_div{
+
+.user_home_uploads_left_div {
     height: 100%;
     width: 20vw;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.user_home_uplaods_username_div{
+
+.user_home_uplaods_username_div {
     height: 70%;
     width: 80%;
     display: flex;
     flex-direction: column;
     padding: 0.4vw 0.2vw;
+    cursor: pointer;
 }
 
-.user_home_uploads_left_div .display_uploads_admin_username{
+.user_home_uploads_left_div .display_uploads_admin_username {
     font-size: 1.2vw;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     margin-right: 1vw;
     color: rgb(190, 190, 190);
+    cursor: pointer;
 }
 
-.user_home_uploads_right_div{
+.user_home_uploads_right_div {
     height: 100%;
     width: 4vw;
     display: flex;
@@ -66,26 +72,27 @@
 
 }
 
-.user_home_admin_uploads_edit_div{
+.user_home_admin_uploads_edit_div {
     height: 4vw;
     width: 4vw;
     padding: 0.7vw 0.7vw;
- 
-    
+
+
 }
 
-.user_home_admin_uploads_edit_div img{
+.user_home_admin_uploads_edit_div img {
     height: 100%;
     width: 100%;
     cursor: pointer;
 }
 
-.app_home_a_profile_link{
+.app_home_a_profile_link {
     text-decoration: none;
 }
+
 /* ------ uplaod admin profile pic ---------- */
 
-.display_admin_uploads_profile_pic{
+.display_admin_uploads_profile_pic {
     height: 3vw;
     width: 3vw;
     border-radius: 50%;
@@ -99,37 +106,39 @@
 
 }
 
-.display_admin_uploads_profile_pic img{
+.display_admin_uploads_profile_pic img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 
 
 /* ---------------------- uplaods img displays */
-.user_home_display_url_img_div{
+.user_home_display_url_img_div {
     min-height: 20vw;
     width: 100%;
     display: flex;
     /* border: 0.01px solid rgb(28, 28, 28); */
     box-shadow: inset 0 0 5px rgba(28, 28, 28, 0.5);
     border-radius: 15px;
+    cursor: pointer;
 
 
 
 }
 
-.user_home_display_url_img_div img{
+.user_home_display_url_img_div img {
     max-height: 55vw;
     width: 100%;
-    object-fit:contain;
+    object-fit: contain;
     border-radius: 15px;
 
 }
 
 /* ------------------- uplaods like,commets,bookmarks etc */
-.user_home_uplaods_features_div{
+.user_home_uplaods_features_div {
     height: 4vw;
     width: 100%;
     display: flex;
@@ -139,7 +148,7 @@
     gap: 1vw;
 }
 
-.user_home_uploads_leftdiv{
+.user_home_uploads_leftdiv {
     height: 100%;
     width: 15vw;
     display: flex;
@@ -148,7 +157,7 @@
     gap: 1vw;
 }
 
-.uploads_likes_para{
+.uploads_likes_para {
     font-size: 1vw;
     font-weight: 500;
     color: #a6a6a6;
@@ -158,20 +167,21 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
-.uploads_likes_para .uploads_likes_para_san{
+
+.uploads_likes_para .uploads_likes_para_san {
     font-size: 1vw;
     font-weight: 600;
     color: #c2c2c2;
     cursor: pointer;
     text-overflow: ellipsis;
-    font-family:futura;
+    font-family: futura;
     gap: 1vw;
 
 }
 
 /* -------------------- user home right with uploads features div */
 
-.user_home_right_div{
+.user_home_right_div {
     height: 100%;
     width: 22vw;
     display: flex;
@@ -182,7 +192,7 @@
     gap: 0.1vw;
 }
 
-.user_home_uploads_features_div{
+.user_home_uploads_features_div {
     height: 3.5vw;
     width: 3.5vw;
     display: flex;
@@ -193,7 +203,7 @@
     padding: 0.6vw 0.6vw;
 }
 
-.user_home_uploads_features_div img{
+.user_home_uploads_features_div img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -201,8 +211,8 @@
 }
 
 
-.user_home_uploads_thoughtsdiv{
-    min-height:2.3vw;
+.user_home_uploads_thoughtsdiv {
+    min-height: 2.3vw;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -211,28 +221,29 @@
     margin-bottom: 0.2vw;
 }
 
-.thought_text{
+.thought_text {
     color: #a9a8a8;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    text-transform:none;
+    text-transform: none;
     font-size: 1vw;
     word-wrap: break-word;
     flex-wrap: wrap;
     word-break: break-all;
 }
-.thought_text_no{
+
+.thought_text_no {
     color: #676767;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
-    text-transform:none;
+    text-transform: none;
     font-size: 0.8vw;
     word-wrap: break-word;
     flex-wrap: wrap;
     word-break: break-all;
 }
 
-.user_home_uploads_add_comments_div{
+.user_home_uploads_add_comments_div {
     height: 3vw;
     width: 100%;
     display: flex;
@@ -240,10 +251,10 @@
     gap: 1vw;
     color: rgb(164, 164, 164);
     font-weight: 600;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.user_home_uploads_thoughts_para{
+.user_home_uploads_thoughts_para {
     font-size: 1.1vw;
     color: #c6c6c6;
     font-family: Arial, Helvetica, sans-serif;
@@ -253,7 +264,7 @@
     gap: 1vw;
 }
 
-.user_home_uploads_add_comments_div button{
+.user_home_uploads_add_comments_div button {
     height: 1.2vw;
     width: 30%;
     border: none;
@@ -269,7 +280,7 @@
     cursor: pointer;
 }
 
-.user_home_uploads_add_comments_div button:hover{
+.user_home_uploads_add_comments_div button:hover {
     background: #171717;
 
 }

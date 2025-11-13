@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import '../User_stylesheets/user_signup_page.css'
-import '../User_stylesheets/User_page_common.css'
-import User_navbar from './User_navbar'
+import './user_signup_page.css'
+import '../../User_stylesheets//User_page_common.css'
 import gsap from 'gsap'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { setAuthUser } from '../redux-store/counter/authSlice'
+import { setAuthUser } from '../../redux-store/counter/authSlice'
 
 const User_signup_page = () => {
-  const { admin_details } = useSelector((state) => state.auth);
+    const { admin_details } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
 
 
@@ -22,12 +21,15 @@ const User_signup_page = () => {
     const [user_email_login, setuser_email_login] = useState('');
     const [user_password_login, setuser_password_login] = useState('');
 
+    const [loadingBool, setloadingBool] = useState(false);
+
 
 
 
     // user login div animation enter
     const login_div_animaion_enter = (e) => {
 
+                setloadingBool(false)
 
 
         setuser_username('');
@@ -38,8 +40,8 @@ const User_signup_page = () => {
             y: '-27vw',
             duration: 0.5,
             opacity: 1,
-            borderTopLeftRadius:'4vw',
-            borderTopRightRadius:'4vw',
+            borderTopLeftRadius: '4vw',
+            borderTopRightRadius: '4vw',
             ease: 'power1.inOut'
 
         })
@@ -47,7 +49,7 @@ const User_signup_page = () => {
             scale: 0.7,
             duration: 0.5,
             opacity: 1,
-            
+
             ease: 'power1.inOut'
         })
         gsap.to(".login_title", {
@@ -82,14 +84,14 @@ const User_signup_page = () => {
             scale: 0.9,
             duration: 0.5,
             opacity: 1,
-   
+
             ease: 'power1.inOut'
         })
 
         gsap.to('.login_frame_', {
             y: '-8vw',
-            borderTopLeftRadius:'7vw',
-            borderTopRightRadius:'7vw',
+            borderTopLeftRadius: '7vw',
+            borderTopRightRadius: '7vw',
             duration: 0.5,
             opacity: 1,
             ease: 'power1.inOut'
@@ -102,30 +104,35 @@ const User_signup_page = () => {
     // user signup function
     const user_register_fun = async (e) => {
         e.preventDefault();
+        setloadingBool(true)
+
 
         const regitser_data_send = {
             Username: user_username,
             Email: user_email,
             Password: user_password
         }
-        
+
 
 
         const axios_register_send = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/register`, regitser_data_send, { withCredentials: true });
 
-        console.log('data',axios_register_send.data.user);
-        
-        if(axios_register_send.status == 200){
+        console.log('data', axios_register_send.data.user);
+
+        if (axios_register_send.status == 200) {
             alert('registered successful');
-            localStorage.setItem("token_c",axios_register_send.data.token)
+            localStorage.setItem("token_c", axios_register_send.data.token)
             dispatch(setAuthUser(axios_register_send.data.user));
-            console.log('data 2',admin_details);
-            
+            console.log('data 2', admin_details);
+            setloadingBool(false);
+
             navigate('/users/home');
-        }else{
+        } else {
             alert(axios_login_send.data.msg);
+            setloadingBool(false);
+
         }
-        
+
 
         setuser_username('');
         setuser_email('');
@@ -133,8 +140,10 @@ const User_signup_page = () => {
     }
 
     // user login funtion 
-    const user_login_fun =async (e) => {
+    const user_login_fun = async (e) => {
         e.preventDefault();
+        setloadingBool(true)
+
 
         const user_login_data_send = {
             Email: user_email_login,
@@ -142,22 +151,26 @@ const User_signup_page = () => {
         }
         console.log(import.meta.env.VITE_BASE_URL);
 
-        const axios_login_send = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/login`, user_login_data_send, {withCredentials:true});
-        
-        
-        
-        
-        if(axios_login_send.status == 200){
-            alert('login successful');
-            localStorage.setItem("token_c",axios_login_send.data.token)
+        try {
+            const axios_login_send = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/login`, user_login_data_send, { withCredentials: true });
 
-            dispatch(setAuthUser(axios_login_send.data.user));
-            navigate('/users/home');
-        }else{
-            alert(axios_login_send.data.msg);
+            
+
+            if (axios_login_send.status == 200) {
+                alert('login successful');
+                localStorage.setItem("token_c", axios_login_send.data.token)
+                setloadingBool(false)
+
+
+                dispatch(setAuthUser(axios_login_send.data.user));
+                navigate('/users/home');
+            }
+        } catch (error) {
+            console.log(error);
+            alert(error.response.data.message);
+            setloadingBool(false)
         }
         
-
         setuser_username('');
         setuser_email('');
         setuser_password('');
@@ -199,9 +212,21 @@ const User_signup_page = () => {
                                     <input type="password" placeholder=' Password' value={user_password} onChange={(e => { setuser_password(e.target.value) })} />
                                 </div>
                                 <div className="signup_btn_div">
-                                    <button className="singup_btn" type='submit'>
-                                        Sign up
-                                    </button>
+
+                                    {
+                                        loadingBool ? (
+                                            <div className="loader-container">
+                                                <div className="pulse-loader">
+                                                    <p>loading...</p>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <button className="singup_btn" type='submit'>
+                                                Sign up
+                                            </button>
+                                        )
+                                    }
+
                                 </div>
                             </form>
 
@@ -218,15 +243,26 @@ const User_signup_page = () => {
                                 </p>
                             </div>
                             <div className="signup_input_div login_input_div">
-                                <input type="email" placeholder=' Email' value={user_email_login} onChange={(e)=>{setuser_email_login(e.target.value)}}/>
+                                <input type="email" placeholder=' Email' value={user_email_login} onChange={(e) => { setuser_email_login(e.target.value) }} />
                             </div>
                             <div className="signup_input_div login_input_div">
-                                <input type="password" placeholder=' Password' value={user_password_login} onChange={(e)=>{setuser_password_login(e.target.value)}}/>
+                                <input type="password" placeholder=' Password' value={user_password_login} onChange={(e) => { setuser_password_login(e.target.value) }} />
                             </div>
                             <div className="signup_btn_div">
-                                <button className="singup_btn" type='submit'>
-                                   log in
-                                </button>
+                                {
+                                    loadingBool ? (
+                                        <div className="loader-container">
+                                            <div className="pulse-loader">
+                                                <p>loading...</p>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <button className="singup_btn" type='submit'>
+                                            log in
+                                        </button>
+                                    )
+                                }
+
                             </div>
 
                         </form>

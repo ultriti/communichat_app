@@ -18,7 +18,6 @@ const App_thoughts_template = (props) => {
                 <div className="thoughts_user_info_edit_div">
 
 
-
                 </div>
 
             </div>

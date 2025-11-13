@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import gsap from 'gsap';
 import '../User_stylesheets/application_download_page.css'
-import User_navbar from './User_navbar'
+import User_navbar from '../common_Routes/User_navbar'
 
 import application_gui_img from '../../../public/images/application_gui_img.svg'
 import application_gui_overlay from '../../../public/images/application_gui_overlay.svg'

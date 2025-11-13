@@ -46,6 +46,7 @@
     border-radius: 20px;
     box-shadow: 0 0 8px rgb(8, 8, 8);
     border: 0.5px solid #11112f;
+
 }
 
 
@@ -98,6 +99,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .app_suggetion_title p{
@@ -106,6 +108,15 @@
     font-weight: 500;
     color: rgb(201, 201, 201);
 }
+.app_suggetion_title .seeAllPara{
+    font-size: 1.1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(92, 131, 221);
+    cursor: pointer;
+}
+
+
 
 .users_suggetion_template_div{
     height: 30vw;

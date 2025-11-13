@@ -1,4 +1,4 @@
-.message_page_frame{
+.message_page_frame {
     min-height: 100vh;
     width: 100%;
     background-color: #0c0d0e;
@@ -7,7 +7,16 @@
     box-sizing: border-box;
 }
 
-.user_msg_main_template{
+
+.loading_frame_{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_msg_main_template {
     height: 100vh;
     width: 93vw;
     background-color: #0c0d0e;
@@ -16,26 +25,74 @@
     margin-left: 6vw;
     overflow-y: scroll;
 }
-.user_msg_main_template::-webkit-scrollbar{
+
+.user_msg_main_template::-webkit-scrollbar {
     width: 0;
 }
+
 /* ---------------------------------------- user chats left div */
-.user_user_chats_leftdiv{
+
+.userSearchFrame {
+    height: 5vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    border-bottom: 2px solid rgb(49, 49, 49);
+}
+
+.userSearchForm {
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(46, 46, 46); */
+    padding: 1vw 0.5vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.userSearchForm input {
+    height: 2.7vw;
+    width: 20vw;
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+    padding: 0.5vw 0.5vw;
+    border-radius: 10px;
+    resize: none;
+    background-color: #151517;
+    border: 0.5px solid #17173d;
+    color: rgb(185, 185, 185);
+    padding: 0 1vw;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+
+.nouserfound{
+    font-size: 1.2vw;
+    color: gray;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-self: center;
+    padding: 1vw 0 0 0 ;
+}
+
+.user_user_chats_leftdiv {
     min-height: 90vh;
     width: 28%;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    padding: 2vw 1vw;
+    padding: 1vw 0vw;
     gap: 1vh;
     position: fixed;
     border-right: 0.5px solid #4040a5;
 }
-.user_user_chats_leftdiv::-webkit-scrollbar{
+
+.user_user_chats_leftdiv::-webkit-scrollbar {
     width: 5px;
 }
 
-.user_chats_frame{
+.user_chats_frame {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -44,11 +101,27 @@
 
 }
 
+.divider {
+    margin: 0;
+    height: 3vw;
+    width: 100%;
+}
+
+.divider p {
+    font-size: 20px;
+    color: gray;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+
+
 /* msg user list */
-.msg_user_list{
+.msg_user_list {
     height: 4vw;
     width: 100%;
-    /* background-color: #1d1e1f; */
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -56,10 +129,40 @@
     padding: 0.5vw 1vw;
     box-sizing: border-box;
     gap: 1vw;
-    border-bottom:1px solid #2c2c2c;
+    cursor: pointer;
 }
 
-.msg_user_profile_pic{
+.msg_user_list_active {
+    height: 4vw;
+    width: 100%;
+    background-color: #292a2c;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 1vw 1vw;
+    box-sizing: border-box;
+    gap: 1vw;
+    border-bottom: 1px solid #2c2c2c;
+    cursor: pointer;
+}
+
+.msg_user_list_inactive {
+    height: 4vw;
+    width: 100%;
+    background-color: #1d1e1f;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 0.5vw 1vw;
+    box-sizing: border-box;
+    gap: 1vw;
+    border-bottom: 1px solid #2c2c2c;
+    cursor: pointer;
+}
+
+.msg_user_profile_pic {
     height: 100%;
     width: 3vw;
     background-color: white;
@@ -71,14 +174,14 @@
     overflow: hidden;
 }
 
-.msg_user_profile_pic img{
+.msg_user_profile_pic img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
 /* name */
-.msg_user_name{
+.msg_user_name {
     height: 100%;
     min-width: 15vw;
     color: white;
@@ -90,20 +193,23 @@
     justify-content: left;
     box-sizing: border-box;
     overflow: hidden;
-    
+
 
 }
-.msg_user_name p{
+
+.msg_user_name p {
     font-family: Arial, Helvetica, sans-serif;
 }
-.onlineIndicator_para{
+
+.onlineIndicator_para {
     font-size: 0.8vw;
     font-weight: 500;
     margin-top: 0.3vw;
     color: green;
     text-transform: capitalize;
 }
-.onlineIndicator_para_of{
+
+.onlineIndicator_para_of {
     font-size: 0.8vw;
     font-weight: 600;
     margin-top: 0.3vw;
@@ -113,7 +219,7 @@
 
 
 /*------------------------------------------> msg right frame */
-.msg_right_frame{
+.msg_right_frame {
     height: 100vh;
     width: 70%;
     margin-left: 30%;
@@ -122,11 +228,12 @@
     box-sizing: border-box;
     padding: 0.5vw 1vw;
 }
-.msg_right_frame::-webkit-scrollbar{
+
+.msg_right_frame::-webkit-scrollbar {
     width: 0;
 }
 
-.msg_rf_cont{
+.msg_rf_cont {
     min-height: 70vh;
     /* background-color: darkblue; */
     width: 100%;
@@ -136,7 +243,7 @@
 }
 
 /* when meesaging */
-.msf_rf_top_user_details{
+.msf_rf_top_user_details {
     height: 4vw;
     width: 100%;
     display: flex;
@@ -148,7 +255,7 @@
     border-bottom: 1px solid gray;
 }
 
-.msg_user_details{
+.msg_user_details {
     height: 100%;
     width: 50%;
     /* background-color: saddlebrown; */
@@ -156,14 +263,15 @@
     align-content: center;
     gap: 2vw;
 }
-.msf_rf_top_user_details a{
+
+.msf_rf_top_user_details a {
     height: 100%;
     width: 100%;
     text-decoration: none;
 }
 
 
-.msf_rf_top_user_details ._msg_user_profile_pic{
+.msf_rf_top_user_details ._msg_user_profile_pic {
     height: 100%;
     width: 4vw;
     border-radius: 50%;
@@ -173,13 +281,14 @@
     overflow: hidden;
 
 }
-._msg_user_profile_pic img{
+
+._msg_user_profile_pic img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-._msg_username{
+._msg_username {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -187,7 +296,7 @@
     align-items: center;
 }
 
-._msg_username p{
+._msg_username p {
     font-size: 1.5vw;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
@@ -195,7 +304,7 @@
     color: white;
 }
 
-.chat_box_frame{
+.chat_box_frame {
     height: 90vh;
     width: 100%;
     display: flex;
@@ -203,7 +312,8 @@
     padding: 0 1vw;
 
 }
-.chat_box_frame::-webkit-scrollbar{
+
+.chat_box_frame::-webkit-scrollbar {
     width: 0;
 }
 
@@ -217,7 +327,7 @@
 }
 
 /*  */
-.emoji_div{
+.emoji_div {
     height: 100%;
     width: 3vw;
     display: flex;
@@ -227,14 +337,14 @@
     overflow: hidden;
 }
 
-.emoji_div .emoji_text{
+.emoji_div .emoji_text {
     font-size: 2vw;
     cursor: pointer;
     align-self: center;
 }
 
 
-.emoji_div img{
+.emoji_div img {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -242,7 +352,7 @@
 }
 
 /* send chat label frame */
-.send_chat_label_frame{
+.send_chat_label_frame {
     height: 4vw;
     width: 100%;
     display: flex;
@@ -253,7 +363,7 @@
     margin-top: 1vw;
 }
 
-.send_chat_label_frame form{
+.send_chat_label_frame form {
     min-height: 100%;
     width: 100%;
     display: flex;
@@ -264,7 +374,7 @@
 }
 
 /* emoji */
-.emoji_frame{
+.emoji_frame {
     height: 29vw;
     width: 22vw;
     overflow: hidden;
@@ -292,20 +402,23 @@
     border: 0.5px solid #17173d;
     color: rgb(199, 199, 199);
 }
-.send_msg_btn{
+
+.send_msg_btn {
     height: 3vw;
     width: 3vw;
     padding: 0.3vw;
     background-color: #101012;
     border: 0;
 }
-.send_msg_btn img{
+
+.send_msg_btn img {
     width: 100%;
     height: 100%;
     transform: translateY(-5px) rotateZ(-20deg);
     cursor: pointer;
 }
-.chat_icons{
+
+.chat_icons {
     height: 100%;
     width: 7%;
     display: flex;
@@ -336,10 +449,10 @@
 
 
 /* chat features div */
-.msg_user_chat_features{
+.msg_user_chat_features {
     height: 100%;
     width: 50%;
-    background-color: #fff;
+    /* background-color: #fff; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,43 +462,44 @@
 
 /* when not meesagec */
 /* msg img */
-.msg_right_frame__no_user_selected{
+.msg_right_frame__no_user_selected {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.msg_right_frame_details{
+
+.msg_right_frame_details {
     min-height: 25vw;
     width: 20vw;
 
 }
 
-.msg_user_propfile_pic{
+.msg_user_propfile_pic {
     height: 20vw;
     width: 20vw;
     border-radius: 50%;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.msg_user_propfile_pic img{
+.msg_user_propfile_pic img {
     height: 100%;
     width: 100%;
 }
 
 /* message */
-.msg_right_frame_details__user_name{
+.msg_right_frame_details__user_name {
     height: 3vw;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:2vw;
+    margin-top: 2vw;
     color: rgb(164, 164, 164);
 }
-.msg_right_frame_details__user_name p{
+
+.msg_right_frame_details__user_name p {
     font-size: 2vw;
     font-weight: bold;
 }
-

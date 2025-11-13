@@ -12,10 +12,13 @@ import gsap from 'gsap'
 import App_delete_uploads from '../create content comp/App_delete_uploads'
 import App_uploads_info_template from '../application home templates/App_uploads_info_template'
 import { setSuggestedUsers } from '../../redux-store/counter/authSlice'
+import LoadingSpinner from '../../common_Routes/Loading';
+import { useNavigate } from 'react-router-dom'
 
 const App_home_pagelayout = () => {
 
     const { isUploads_display_info } = useContext(userDataContext)
+    const navigate = useNavigate()
 
     if (isUploads_display_info === true) {
         gsap.to('.app_side_bar_div', {
@@ -36,6 +39,7 @@ const App_home_pagelayout = () => {
 
         })
     }
+    
     const dispatch = useDispatch();
 
     const { admin_details } = useSelector((state) => state.auth);
@@ -49,6 +53,7 @@ const App_home_pagelayout = () => {
     const [data, setdata] = useState([])
     const [loading_bol, setloading_bol] = useState(false)
     const [data_bol, setdata_bol] = useState(true)
+    const [isLoading, setisLoading] = useState(false)
 
 
 
@@ -56,24 +61,35 @@ const App_home_pagelayout = () => {
         useEffect(() => {
 
             const get_all_users_uploads = async () => {
+                // setisLoading(true)
+
                 const axios_get_all_uplaods_ = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/get_all_uploads?page=${page}&limit=${3}`, { withCredentials: true });
+
+                if(axios_get_all_uplaods_.status == 404){
+                   navigate("/users/Login")
+                }
+
+                console.log("check cookies",axios_get_all_uplaods_.status);
+                
                 setloading_bol(true)
                 dispatch(setUpload(axios_get_all_uplaods_.data.posts));
                 setdata(prev => [...prev, ...axios_get_all_uplaods_.data.posts])
                 setdata_bol(false)
                 setpage(1 + 1);
                 setloading_bol(false)
+                // setisLoading(false)
             }
+
             get_all_users_uploads();
+
         }, [location.pathname])
 
     } else {
         useEffect(() => {
             dispatch(setUpload(uploads))
 
-
-
             const get_all_users_uploads = async () => {
+                // setisLoading(true)
                 setloading_bol(true)
                 const axios_get_all_uplaods_ = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/get_all_uploads?page=${page}&limit=${3}`, { withCredentials: true });
                 if (axios_get_all_uplaods_.status == 200) {
@@ -82,6 +98,7 @@ const App_home_pagelayout = () => {
                     setdata_bol(false)
                 }
                 setloading_bol(false)
+                // setisLoading(false)
 
             }
             get_all_users_uploads();
@@ -90,8 +107,6 @@ const App_home_pagelayout = () => {
 
 
     const handleScroll = () => {
-
-
         if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
             setpage(prevPage => prevPage + 1);
         }
@@ -101,27 +116,44 @@ const App_home_pagelayout = () => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-
     }, [])
 
 
     // --------- all funtions --------------------------------
     const get_user_suggetions_fun = async (e) => {
-        const axios_get_users_suggetions = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/suggested`, { withCredentials: true });
-        const suggestedUsersWithCounts = axios_get_users_suggetions.data.suggestedUsers.map((user) => ({
-            ...user,
-            Followers_len: user.Follower.length,
-            Following_len: user.Following.length,
-            Follower: user.Follower,
-            Following: user.Following,
-        }));
-        setsuggested_user_data(suggestedUsersWithCounts.slice(0, 5));
-        dispatch(setSuggestedUsers(suggestedUsersWithCounts.slice(0, 5)));
+
+        setisLoading(true)
+        try {
+            const axios_get_users_suggetions = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/suggested`, { withCredentials: true });
+            9
+            if (axios_get_users_suggetions.status === 200 || axios_get_users_suggetions.data.success === ture) {
+                const suggestedUsersWithCounts = axios_get_users_suggetions.data.filteredUser.map((user) => ({
+                    ...user,
+                    Followers_len: user.Follower.length,
+                    Following_len: user.Following.length,
+                    Follower: user.Follower,
+                    Following: user.Following,
+                }));
+                setsuggested_user_data(suggestedUsersWithCounts.slice(0, 5));
+                dispatch(setSuggestedUsers(suggestedUsersWithCounts.slice(0, 5)));
+                console.log('--> token data token n ids : ', axios_get_users_suggetions.data.tokendata);
+                setisLoading(false)
+            }else{
+                alert(axios_get_users_suggetions.data.error)
+            }
+
+
+        } catch (error) {
+            alert(error.response.data.message)
+        }
+
 
     }
     useEffect(() => {
         get_user_suggetions_fun();
     }, [5 * 60 * 1000])
+
+    
 
 
     // return (
@@ -183,8 +215,13 @@ const App_home_pagelayout = () => {
     return (
         <div className='App_home_pagelayout_frame'>
 
-
-            <div className="app_home_highlights_div">
+            {
+        isLoading ? (
+          <div className="loading_frame_">
+            <LoadingSpinner />
+          </div>
+        ) : ( <>
+        <div className="app_home_highlights_div">
 
 
             </div>
@@ -199,10 +236,14 @@ const App_home_pagelayout = () => {
 
                     {data_bol ? (
                         data.map((upload, index) => (
+                            // console.log('--------->>',upload),
                             <div className="home_uploads_template_div" key={index}>
                                 <App_user_uploads_template uploads={upload} />
-                            </div>))) :
+                            </div>))
+                            ) :
+
                         (uploads.map((upload, index) => (
+                            // console.log('--------->',upload),
                             <div className="home_uploads_template_div" key={index}>
                                 <App_user_uploads_template uploads={upload} />
                             </div>
@@ -228,6 +269,7 @@ const App_home_pagelayout = () => {
                             <p className="suggetion_title_p">
                                 Users available
                             </p>
+                            <p className='seeAllPara'>see all</p>
                         </div>
 
                         <div className="users_suggetion_template_div">
@@ -242,6 +284,11 @@ const App_home_pagelayout = () => {
 
                 </div>
             </div>
+        </> )
+    }
+
+
+            
 
 
 

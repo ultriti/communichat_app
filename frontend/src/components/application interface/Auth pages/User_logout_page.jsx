@@ -1,8 +1,8 @@
 import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { removeAuthUser, setAuthUser } from '../redux-store/counter/authSlice'
-import { setSocket } from '../redux-store/counter/socketSlice'
+import { removeAuthUser, setAuthUser } from '../../redux-store/counter/authSlice'
+import { setSocket } from '../../redux-store/counter/socketSlice'
 
 const User_logout_page = () => {
   const nav = useNavigate()
@@ -13,6 +13,7 @@ const User_logout_page = () => {
 
   useEffect(() => {
     localStorage.removeItem('token_c')
+    localStorage.removeItem('userId')
     
   
     // dispatch(setSocket(null))

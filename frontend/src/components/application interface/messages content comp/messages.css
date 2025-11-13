@@ -6,6 +6,12 @@
 
 }
 
+.loading_frame_message{
+    height:100%;
+    width: 100%;
+    /* background-color: saddlebrown; */
+}
+
 
 .message_user_details_top_frame{
     min-height: 13vw;
@@ -71,6 +77,7 @@
     min-height: 50vh;
     width: 100%;
     display: flex;
+    /* background-color: #fff; */
    
 }
 .message_content_frame_display_cont{
@@ -78,6 +85,7 @@
     width: 100%;
     flex-direction: column;
     gap: 0.2vw;
+    /* background-color: #974343; */
 }
 
 .display_message{
@@ -132,4 +140,9 @@
     display: flex;
     text-align: left;
  
+}
+
+.chat_box_frame {
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }

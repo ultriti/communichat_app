@@ -1,0 +1,196 @@
+.user_sidebar_frame {
+    height: 100%;
+    width: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw 0vw;
+    box-sizing: border-box;
+    gap: 1vw;
+    border-right: 0.5px solid #11112f;
+}
+
+.sliderFrame_Sidebar{
+    height: 100%;
+    width: 25%;
+    background-color: rgba(18, 18, 18, 0.978);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 6vw;
+    padding: 1vw 1vw 0 0.5vw;
+}
+
+.notificationDetailFrame{
+    height: 4vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border-bottom: 1px solid gray; */
+}
+
+.RTL_ProfilePic_div{
+    height: 100%;
+    width: 15%;
+    /* background-color: saddlebrown; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0.5vw;
+    
+}
+
+.RTL_ProfilePic_div img{
+    height: 2.75vw;
+    width: 2.75vw;
+    /* background-color: white; */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.RTL_ProfileDetail_div{
+    height: 100%;
+    width: 70%;
+    /* background-color: rgb(44, 44, 118); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.2vw 0.5vw;
+    gap: 0.5vw;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.RTL_ProfileDetail_div p{
+    font-weight: 700;
+    font-size: 1.2vw;
+    color:rgb(201, 200, 200);
+}
+
+.RTL_ProfileDetail_div .text_{
+     font-weight: 400;
+    font-size: 1.2vw;
+    color:rgb(159, 159, 159);
+}
+
+
+
+.RTL_upload_div{
+    height: 100%;
+    width: 15%;
+    /* background-color: #fff; */
+    padding: 0.3vw;
+}
+
+.RTL_upload_div img{
+    height: 100%;
+    width: 100%;
+    /* background-color: #c47f7f; */
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.sidebar_page_list {
+    height: 3vw;
+    width: 3vw;
+    cursor: pointer;
+    border-radius: 40%;
+    border-right: 0.5px solid #4848a1;
+    border-left: 0.5px solid #4848a1;
+    background: linear-gradient(135deg,  #1a1a1b,#272742);
+    
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.sidebarPageCont {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sideBarImgdiv {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.sideBarImgdiv img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.navlink_active {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background: linear-gradient(135deg, #ffffff, #b5b5b5);
+}
+
+.navlink_active_p {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #3f016f, #001d67);
+}
+
+.navlink_inactive_p {
+    height: 100%;
+    width: 100%;
+}
+
+.navlink_inactive {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.sidebar_page_list img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar_overlay {
+    height: 3vw;
+    width: 3vw;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: right;
+}
+
+.NavbarOverlay_indicator {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    background-color: red;
+    transform: translateY(23px) translateX(-2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavbarOverlay_indicator p {
+    font-size: 1.1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+
+}
